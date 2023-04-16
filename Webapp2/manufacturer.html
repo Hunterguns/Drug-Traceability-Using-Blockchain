@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Manufacturer</title>
+	<link rel="stylesheet" type="text/css" href="manufacturerstyle.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.2.7-rc.0/web3.min.js"></script>
+    <script src="script.js"></script>
+
+</head>
+<body onload="onLoadFunction()">
+	<div class="container">
+		<h1>My Form</h1>
+		<form>
+			<label for="name">Brand Name:</label><br>
+			<input type="text" id="brandName_input" name="brandName"><br>
+
+			<label for="email">Drug Name:</label><br>
+			<input type="text" id="drugName_input" name="drugName"><br>
+
+			<label for="phone">Date Of Manufacture:</label><br>
+			<input type="text" id="dateOfManufacture_input" name="dateOfManufacture"><br>
+
+			<label for="address">Date Of Expiry:</label><br>
+			<input type="text" id="dateOfExpiry_input" name="dateOfExpiry"><br>
+
+			<label for="city">Price:</label><br>
+			<input type="text" id="price_input" name="price"><br>
+
+			<!-- <label for="state">State:</label><br>
+			<input type="text" id="state" name="state"><br>
+
+			<label for="zip">Zip:</label><br>
+			<input type="text" id="zip" name="zip"><br>
+
+			<label for="country">Country:</label><br>
+			<input type="text" id="country" name="country"><br>
+
+			<label for="comments">Comments:</label><br>
+			<textarea id="comments" name="comments"></textarea><br> -->
+
+			<!-- <button id="submitManufacturer" type="button" onclick="testfunc()">Submit</button> -->
+			<button id="submitManufacturer" type="button" onclick="submitDrugDetails()">Submit</button>
+			<button id="getCode" type="button" onclick="readContract()">GetCode</button>
+		</form>
+
+		<div class="result-container">
+			<p id="result_manufacturer"></p>
+		</div>
+		
+	</div>
+
+
+</body>
+</html>

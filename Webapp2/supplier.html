@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Supplier</title>
+	<link rel="stylesheet" type="text/css" href="supplierstyle.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.2.7-rc.0/web3.min.js"></script>
+    <script src="script.js"></script>
+</head>
+<body onload="onLoadFunction()">
+	<div class="container">
+		<h1>My Form</h1>
+		<form>
+			<label for="name">Drug Unique Code:</label><br>
+			<input type="text" id="drugCode" name="drugCode"><br>
+
+			<button type="button" onclick="getDrugDetails()">Submit</button>
+		</form>
+
+		<div class="result-container">
+			<p id="brandName_result_consumer"></p>
+			<p id="drugName_result_consumer"></p>
+			<p id="dom_result_consumer"></p>
+			<p id="doe_result_consumer"></p>
+			<p id="manAddress_result_consumer"></p>
+			<p id="price_result_consumer"></p>
+		</div>
+		
+	</div>
+
+
+</body>
+</html>
