@@ -273,7 +273,7 @@ const connectContract = async () => {
     },
   ];
   //Address of contract deployed
-  const Address = "0x8c05448085613B0eeE635A2fa9dc944F0E7f9998";
+  const Address = "0x3dC5461c4B44bC1cD64bE7793b4f53773F4b136b";
   // const contract = web3.eth.Contract(ABI);
   // const contractInstance = contract.at(Address);
   window.web3 = await new Web3(window.ethereum);

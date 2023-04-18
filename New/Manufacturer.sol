@@ -1,6 +1,8 @@
 //SPDX-Licence-Identifier:MIT
 
 pragma solidity ^0.8.0;
+̥
+import "hardhat/console.sol";
 
 contract Manufacturer {
     address public owner;
@@ -36,7 +38,7 @@ contract Manufacturer {
         string memory _expiryDate,
         uint256 _price
     ) external returns (uint256, address) {
-        drugcode = randMod(100);
+        drugcode = randMod(1000000);
         drugInfo[drugcode] = drug(
             _brandName,
             _drugName,
@@ -46,6 +48,8 @@ contract Manufacturer {
             _price
         );
         drugManufacturer[drugcode] = msg.sender;
+        console.log("log 1");
+        console.log(drugcode);
         return (drugcode, msg.sender);
     }
 
