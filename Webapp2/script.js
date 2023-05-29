@@ -1,9 +1,3 @@
-// (function () {
-//   connectMetamask().then(function () {
-//     connectContract();
-//   });
-// })();
-
 let account;
 var contract;
 var drugCode;
@@ -19,24 +13,16 @@ function testfunc() {
   console.log(account);
 }
 
-// document.getElementById("checkConnect").onclick = function connectcheck() {
-//   alert("The button clicked by JavaScript onClick function");
-// };
-
 function checkConnect() {
-  //   alert("The button clicked by JavaScript onClick function");
-  //   console.log("Checking....");
   connectMetamask().then(function () {
     connectContract();
   });
-  //   connectContract();
 }
 
 const connectMetamask = async () => {
   if (window.ethereum !== "undefined") {
     const accounts = await ethereum.request({ method: "eth_requestAccounts" });
     account = accounts[0];
-    // document.getElementById("accountArea").innerHTML = account;
     console.log("Connected Metamask");
   }
 };
@@ -273,13 +259,10 @@ const connectContract = async () => {
     },
   ];
   //Address of contract deployed
-  const Address = "0x3dC5461c4B44bC1cD64bE7793b4f53773F4b136b";
-  // const contract = web3.eth.Contract(ABI);
-  // const contractInstance = contract.at(Address);
+  const Address = "0xeC2F06451e29593bF83F75Aa48E388eB0787DCa0";
+
   window.web3 = await new Web3(window.ethereum);
   contract = await new window.web3.eth.Contract(ABI, Address);
-  //   document.getElementById("contractArea").innerHTML =
-  //     "connected to smart contract";
   console.log("Connected Smart Contract");
 };
 
@@ -296,8 +279,6 @@ const readContract = async () => {
 };
 
 const getDrugDetails = async () => {
-  // console.log(document.getElementById("drugCode").value);
-  // console.log(parseInt(document.getElementById("drugCode").value));
   var drugCode = parseInt(document.getElementById("drugCode").value);
   console.log(drugCode);
 
@@ -313,9 +294,6 @@ const getDrugDetails = async () => {
       console.log("r4" + r4);
       console.log("r5" + r5);
       console.log("r6" + r6);
-      // var price = r6.toString();
-      // document.getElementById("result").innerHTML =
-      //   r1 + "," + r2 + "," + r3 + "," + r4 + "," + r5 + "," + r6;
       document.getElementById("brandName_result_consumer").innerHTML =
         "Brand: " + r1;
       console.log("r1 set");
@@ -337,12 +315,6 @@ const getDrugDetails = async () => {
     });
   document.getElementsByClassName("result-container")[0].style.display =
     "block";
-  // document.getElementById("brandName_result_consumer").style.display = "block";
-  // document.getElementById("").style.display = "block";
-  // document.getElementById("").style.display = "block";
-  // document.getElementById("").style.display = "block";
-  // document.getElementById("").style.display = "block";
-  // document.getElementById("").style.display = "block";
 };
 
 const submitDrugDetails = async () => {
@@ -366,17 +338,4 @@ const submitDrugDetails = async () => {
   console.log(drugCode);
   document.getElementsByClassName("result-container")[0].style.display =
     "block";
-  // document.getElementById("sendstatus").innerHTML = "SUCCESS";
 };
-
-function submitManufacturerForm() {
-  console.log("Clicked Submit");
-}
-
-function submitSupplierForm() {
-  console.log("Clicked Submit");
-}
-
-function submitConsumerForm() {
-  console.log("Clicked Submit");
-}
